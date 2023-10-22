@@ -1,0 +1,8 @@
+Oct 22, 2023 12:30:30 PM news.parser.main main
+INFO: Logger Initialized
+Oct 22, 2023 12:30:30 PM news.parser.ArticleParser createArticle
+WARNING: Null field encountered at index 2
+Oct 22, 2023 12:30:30 PM news.parser.ArticleParser createArticle
+WARNING: Null field encountered at index 5
+Oct 22, 2023 12:30:30 PM news.parser.ArticleParser createArticle
+WARNING: Null field encountered at index 6
