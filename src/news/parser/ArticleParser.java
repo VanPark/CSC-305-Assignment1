@@ -18,6 +18,9 @@ public class ArticleParser {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         JsonNode jn = mapper.readTree(new File(fileName));
         JsonNode articles = jn.get("articles");
+        if (articles == null){
+            return null;
+        }
         ArrayList<Article> aList = new ArrayList<>();
         for (int i = 0; i < articles.size(); i++){
             try {
