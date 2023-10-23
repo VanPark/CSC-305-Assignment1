@@ -16,14 +16,20 @@ public class Article {
     }
 
     /**
-     *
+     * Override of the toString method to better represent the object
      * @return the string that represents the object
      */
+    @Override
     public String toString(){
         return String.format("Title: %s%nDescription: %s%nDate Published: %s%nURL: %s%n%n",
                 title, description, published, url);
     }
 
+    /**
+     * Override of the equals to be more substantial
+     * @param o the object being compared
+     * @return whether the objects are equivalent
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

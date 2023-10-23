@@ -12,14 +12,21 @@ import java.util.logging.Logger;
 
 public class ArticleParser {
 
-    public ArrayList<Article> createArticle(String fileName, Logger log)
+    /**
+     * This method takes in a JSON file and parses the information into article objects
+     * @param fileName the given filePath
+     * @param log the logger that is meant to handle exceptions
+     * @return a list of Articles parsed form the
+     * @throws IOException
+     */
+    public ArrayList<Article> createArticles(String fileName, Logger log)
             throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         JsonNode jn = mapper.readTree(new File(fileName));
         JsonNode articles = jn.get("articles");
         if (articles == null){
-            return null;
+            return new ArrayList<>();
         }
         ArrayList<Article> aList = new ArrayList<>();
         for (int i = 0; i < articles.size(); i++){

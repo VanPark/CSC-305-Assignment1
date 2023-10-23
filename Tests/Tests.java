@@ -15,14 +15,14 @@ public class Tests {
     @Test
     public void testEmptyFile() throws IOException {
         ArticleParser ap = new ArticleParser();
-        ArrayList<Article> articles = ap.createArticle("empty.JSON", log);
-        Assert.assertEquals(null, articles);
+        ArrayList<Article> articles = ap.createArticles("empty.JSON", log);
+        Assert.assertEquals(new ArrayList<Article>(), articles);
     }
 
     @Test
     public void testSingleInput() throws IOException {
         ArticleParser ap = new ArticleParser();
-        ArrayList<Article> articles = ap.createArticle("single.JSON", log);
+        ArrayList<Article> articles = ap.createArticles("single.JSON", log);
         ArrayList<Article> expected = new ArrayList<>();
         expected.add(new Article("The latest on the coronavirus pandemic and vaccines: Live updates - CNN",
                 "The coronavirus pandemic has brought countries to a standstill. Meanwhile, " +
@@ -35,7 +35,7 @@ public class Tests {
     @Test
     public void testMultipleInput() throws IOException {
         ArticleParser ap = new ArticleParser();
-        ArrayList<Article> articles = ap.createArticle("multiple.JSON", log);
+        ArrayList<Article> articles = ap.createArticles("multiple.JSON", log);
         ArrayList<Article> expected = new ArrayList<>();
         expected.add(new Article("People line the streets of Boulder to honor slain police Officer Eric Talley " +
                 "- CNN", "Boulder, Colorado, continued to mourn fallen Officer Eric Talley on Wednesday.",
@@ -57,7 +57,7 @@ public class Tests {
         log.info("Logger Initialized");
 
         ArticleParser ap = new ArticleParser();
-        ArrayList<Article> articles = ap.createArticle("bad2.JSON", log);
+        ArrayList<Article> articles = ap.createArticles("bad2.JSON", log);
         Assert.assertEquals(new ArrayList<Article>(), articles);
     }
 
@@ -71,7 +71,7 @@ public class Tests {
         log.info("Logger Initialized");
 
         ArticleParser ap = new ArticleParser();
-        ArrayList<Article> articles = ap.createArticle("mixed.JSON", log);
+        ArrayList<Article> articles = ap.createArticles("mixed.JSON", log);
         ArrayList<Article> expected = new ArrayList<>();
         expected.add(new Article("It’s been 20 years since the launch of Mac OS X - Ars Technica",
                 "It's macOS 11 now, but the DNA is the same.", "2021-03-24T21:44:01Z",
